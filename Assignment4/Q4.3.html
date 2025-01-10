@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+</head>
+<body>
+    <form id="form3">
+        <div id="page3" style="display:none;">
+            <label>Company Name: <input type="text" name="company"></label><br>
+            <label>Designation: <input type="text" name="designation"></label><br>
+            <label>Duration: <input type="text" name="duration"></label><br><br>
+            
+            <label>Upload Resume: <input type="file" name="resume"></label><br><br>
+            
+            <button type="button" onclick="prevPage()">Previous</button>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        function prevPage() {
+            document.getElementById('page3').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
