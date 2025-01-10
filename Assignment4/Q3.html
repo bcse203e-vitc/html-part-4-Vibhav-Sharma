@@ -1,0 +1,38 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <form>
+        <label>Name: <input type="text" name="name"></label><br>
+        <label>Email: <input type="email" name="email"></label><br>
+        
+        <label>Rate the Website:</label><br>
+        <input type="radio" name="rating" value="1"> 1
+        <input type="radio" name="rating" value="2"> 2
+        <input type="radio" name="rating" value="3"> 3
+        <input type="radio" name="rating" value="4"> 4
+        <input type="radio" name="rating" value="5"> 5<br>
+        
+        <label>Feedback:</label><br>
+        <textarea name="feedback"></textarea><br>
+        
+        <label>Type of Feedback:</label>
+        <select name="feedback_type">
+            <option>Suggestion</option>
+            <option>Bug Report</option>
+            <option>Compliment</option>
+        </select><br>
+        
+        <label>Would you recommend us?</label><br>
+        <input type="radio" name="recommend" value="yes"> Yes
+        <input type="radio" name="recommend" value="no"> No<br>
+        
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
