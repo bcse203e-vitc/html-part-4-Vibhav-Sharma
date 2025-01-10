@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+</head>
+<body>
+    <form id="form2">
+        <div id="page2" style="display:none;">
+            <label>Degree: <input type="text" name="degree"></label><br>
+            <label>Year of Passing: <input type="text" name="year"></label><br>
+            <label>Institution Name: <input type="text" name="institution"></label><br><br>
+            <button type="button" onclick="prevPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+    </form>
+
+    <script>
+        function nextPage() {
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page3').style.display = 'block';
+        }
+        
+        function prevPage() {
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page1').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
