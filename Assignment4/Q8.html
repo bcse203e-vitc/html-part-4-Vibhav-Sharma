@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Submission</title>
+</head>
+<body>
+    <h2>Online Quiz</h2>
+    <form>
+        <label>Name: <input type="text" name="name" required placeholder="Enter your name"></label><br><br>
+        <label>Email: <input type="email" name="email" required placeholder="Enter your email"></label><br><br>
+
+        <h3>Question 1:</h3>
+        <input type="radio" name="q1" value="A" required> Option A
+        <input type="radio" name="q1" value="B"> Option B
+        <input type="radio" name="q1" value="C"> Option C<br><br>
+
+        <h3>Question 2:</h3>
+        <input type="radio" name="q2" value="A" required> Option A
+        <input type="radio" name="q2" value="B"> Option B
+        <input type="radio" name="q2" value="C"> Option C<br><br>
+
+        <button type="submit">Submit Quiz</button><br><br>
+
+        <p>Remaining time: <span id="timer">10:00</span></p>
+    </form>
+
+    <script>
+        let timeLeft = 600; // 10 minutes
+        let timer = setInterval(function() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            timeLeft--;
+            if (timeLeft < 0) clearInterval(timer);
+        }, 1000);
+    </script>
+</body>
+</html>
