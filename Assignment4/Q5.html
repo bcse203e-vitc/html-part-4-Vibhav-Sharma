@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Order Form</title>
+    <style>
+        .total { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Product Order Form</h2>
+    <form id="orderForm">
+        <label>Customer Name: <input type="text" name="name" required></label><br><br>
+        <label>Email: <input type="email" name="email" required></label><br><br>
+        <label>Address: <input type="text" name="address" required></label><br><br>
+
+        <label>Product:
+            <select name="product" id="product" onchange="updatePrice()" required>
+                <option value="product1" data-price="20">Product 1 - $20</option>
+                <option value="product2" data-price="30">Product 2 - $30</option>
+                <option value="product3" data-price="40">Product 3 - $40</option>
+            </select>
+        </label><br><br>
+
+        <label>Quantity: <input type="number" name="quantity" id="quantity" value="1" min="1" onchange="updatePrice()" required></label><br><br>
+
+        <label>Delivery Preferences:</label><br>
+        <input type="radio" name="delivery" value="Standard" checked onchange="updatePrice()"> Standard
+        <input type="radio" name="delivery" value="Express" onchange="updatePrice()"> Express<br><br>
+
+        <label>Coupon Code: <input type="text" id="coupon" placeholder="Enter coupon"></label>
+        <button type="button" onclick="applyCoupon()">Apply</button><br><br>
+
+        <div class="total">Total Price: $<span id="totalPrice">20</span></div><br><br>
+        
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <script>
+        let productPrices = {
+            product1: 20,
+            product2: 30,
+            product3: 40
+        };
+
+        let discount = 0;
+
+        function updatePrice() {
+            let product = document.getElementById('product').value;
+            let quantity = document.getElementById('quantity').value;
+            let delivery = document.querySelector('input[name="delivery"]:checked').value;
+
+            let price = productPrices[product] * quantity;
+            if (delivery === 'Express') {
+                price += 10; // Adding $10 for Express delivery
+            }
+
+            let total = price - discount;
+            document.getElementById('totalPrice').textContent = total.toFixed(2);
+        }
+
+        function applyCoupon() {
+            let coupon = document.getElementById('coupon').value;
+            if (coupon === "DISCOUNT10") {
+                discount = 10;
+                alert("Coupon applied! $10 discount.");
+            } else {
+                discount = 0;
+                alert("Invalid coupon.");
+            }
+            updatePrice();
+        }
+    </script>
+</body>
+</html>
