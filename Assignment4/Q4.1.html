@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+</head>
+<body>
+    <form id="form1">
+        <div id="page1">
+            <label>Name: <input type="text" name="name"></label><br>
+            <label>Address: <input type="text" name="address"></label><br>
+            <label>Contact Info: <input type="text" name="contact"></label><br><br>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+    </form>
+
+    <script>
+        function nextPage() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
